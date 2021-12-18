@@ -20,7 +20,8 @@ jobs:
           echo "commit_hash=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Send webhook for starting CI
-        run: curl -X POST --data '{"text":"> CI Starting: ${{ env.commit_hash }}"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: | 
+          curl -X POST --data '{"text":"> CI Starting: ${{ env.commit_hash }}"}' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v1
