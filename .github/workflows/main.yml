@@ -35,7 +35,7 @@ jobs:
         run: yarn build
 
       - name: Docker
-        run: npm run docker
+        run: yarn docker
 
       - name: Log in to Docker Hub
         if: github.ref == 'refs/heads/master'
