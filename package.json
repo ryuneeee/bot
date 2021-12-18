@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "@slack/bolt": "^3.8.1",
+    "fastify": "^3.25.0",
     "pm2": "^5.1.2"
   }
 }
