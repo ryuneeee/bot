@@ -15,6 +15,5 @@ slack.message(/.*/g, async ({ message, say }: { message: any; say: any }) => {
 
 (async () => {
   await slack.start(Number(process.env.PORT) || 3000);
-  
   console.log(`⚡️ Bolt app is running at ${Number(process.env.PORT) || 3000}`);
 })();

@@ -15,7 +15,6 @@
     "pm2": "tsdx build && pm2 --name bot start ecosystem.config.js --no-daemon --env production",
     "docker": "docker build . -t ryuneeee/bot && docker image tag ryuneeee/bot ryuneeee/bot:latest && docker image tag ryuneeee/bot ryuneeee/bot:$(git rev-parse --short HEAD)",
     "push": "docker image push ryuneeee/bot:$(git rev-parse --short HEAD)",
-
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
