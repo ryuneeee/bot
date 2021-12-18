@@ -14,7 +14,7 @@
     "dev": "ts-node-dev --respawn ./src/index.ts",
     "pm2": "tsdx build && pm2 --name ppomppu start ecosystem.config.js --no-daemon --env production",
     "docker": "podman build . -t ryuneeee/ppomppu && podman image tag ryuneeee/ppomppu ryuneeee/ppomppu:latest && podman image tag ryuneeee/ppomppu ryuneeee/ppomppu:$(git rev-parse --short HEAD)",
-    "publish": "podman image push --all-tags ryuneeee/ppomppu",
+    "push": "podman image push ryuneeee/ppomppu:$(git rev-parse --short HEAD)",
 
     "start": "tsdx watch",
     "build": "tsdx build",
