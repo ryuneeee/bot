@@ -62,15 +62,17 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         if: always()
-
+        
       - name: Checkout Helm repository & Update image tags
-        uses: mikefarah/yq@master
         uses: actions/checkout@v2
         with:
           repository: ryuneeee/helm-repository
           token: ${{ secrets.GITHUB_PAT }}
           path: bot
-        run: |
+          
+      - name: modify latest tag
+        uses: mikefarah/yq@master
+      - run: |
           yq e -i '.image.tag=${{ env.commit_hash }}' values.yaml
           git config user.name github-actions
           git config user.email github-actions@github.com
