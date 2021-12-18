@@ -67,7 +67,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ryuneeee/helm-repository
-          token: ${{ secrets.GITHUB_PAT }}
+          token: ${{ secrets.GH_PAT }}
           path: bot
           
       - name: modify latest tag
