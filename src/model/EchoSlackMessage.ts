@@ -1,6 +1,6 @@
 import { Message } from './Message';
 
-export class SlackMessage implements Message {
+export class EchoSlackMessage implements Message {
   message: any;
   say: any;
 
@@ -14,7 +14,7 @@ export class SlackMessage implements Message {
 
   reply(text: string): void {
     this.say({
-      text: `답장: ${this.text()}`,
+      text: this.text(),
     });
   }
 }
