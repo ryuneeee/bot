@@ -12,9 +12,9 @@
   },
   "scripts": {
     "dev": "ts-node-dev --respawn ./src/index.ts",
-    "pm2": "tsdx build && pm2 --name ppomppu start ecosystem.config.js --no-daemon --env production",
-    "docker": "podman build . -t ryuneeee/ppomppu && podman image tag ryuneeee/ppomppu ryuneeee/ppomppu:latest && podman image tag ryuneeee/ppomppu ryuneeee/ppomppu:$(git rev-parse --short HEAD)",
-    "push": "podman image push ryuneeee/ppomppu:$(git rev-parse --short HEAD)",
+    "pm2": "tsdx build && pm2 --name bot start ecosystem.config.js --no-daemon --env production",
+    "docker": "docker build . -t ryuneeee/bot && docker image tag ryuneeee/bot ryuneeee/bot:latest && docker image tag ryuneeee/bot ryuneeee/bot:$(git rev-parse --short HEAD)",
+    "push": "docker image push ryuneeee/bot:$(git rev-parse --short HEAD)",
 
     "start": "tsdx watch",
     "build": "tsdx build",
@@ -36,16 +36,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ppomppu",
+  "name": "bot",
   "author": "Ryunhee Han",
-  "module": "dist/ppomppu.esm.js",
+  "module": "dist/bot.esm.js",
   "size-limit": [
     {
-      "path": "dist/ppomppu.cjs.production.min.js",
+      "path": "dist/bot.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/ppomppu.esm.js",
+      "path": "dist/bot.esm.js",
       "limit": "10 KB"
     }
   ],

@@ -1,7 +1,7 @@
 module.exports = {
     apps : [
         {
-          name: "ppomppu",
+          name: "bot",
           script: "./dist/index.js",
           watch: true,
           env: {
