@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Starting webhook
-        run: curl -X POST --data '{"text":"CI Starting ${{ github.sha }}"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: curl -X POST --data '{"text":"> CI Starting ${GITHUB_SHA::7}"}' ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Checkout repo
         uses: actions/checkout@v2
