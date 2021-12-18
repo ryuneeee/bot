@@ -73,7 +73,7 @@ jobs:
       - name: modify latest tag
         uses: mikefarah/yq@master
       - run: |
-          yq e -i '.image.tag=${{ env.commit_hash }}' values.yaml
+          yq e -i '.image.tag=${{ env.commit_hash }}' ./bot/values.yaml
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
