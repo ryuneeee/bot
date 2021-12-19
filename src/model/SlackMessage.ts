@@ -14,7 +14,7 @@ export class SlackMessage implements Message {
 
   reply(text: string): void {
     this.say({
-      text: this.text(),
+      text: text,
     });
   }
 }
