@@ -10,6 +10,6 @@ export class Processor {
   }
 
   handleMessage(message: Message) {
-    this.handlers.map(h => h.handle(message));
+    this.handlers.map((h) => h.handle(message));
   }
 }

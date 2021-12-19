@@ -1,6 +1,6 @@
 import { Message } from './Message';
 
-export class EchoSlackMessage implements Message {
+export class SlackMessage implements Message {
   message: any;
   say: any;
 
