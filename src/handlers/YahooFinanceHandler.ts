@@ -21,7 +21,7 @@ export class YahooFinanceHandler implements MessageHandler {
           .map((t) => t.trim())
           .map((t) => {
             let price = response.data[t].regularMarketPrice;
-            return (reply += `> ${t}: $${price}\n`);
+            reply += `> ${t}: $${price}\n`;
           });
 
         msg.reply(reply);
