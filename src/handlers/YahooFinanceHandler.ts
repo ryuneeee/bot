@@ -19,9 +19,9 @@ export class YahooFinanceHandler implements MessageHandler {
 
         tickers
           .map((t) => t.trim())
-          .map((ticker) => {
-            let price = response.data[ticker].regularMarketPrice;
-            reply += `> ${ticker}: $${price}\n`;
+          .map((t) => {
+            let price = response.data[t].regularMarketPrice;
+            return (reply += `> ${t}: $${price}\n`);
           });
 
         msg.reply(reply);
