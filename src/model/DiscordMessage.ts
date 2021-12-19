@@ -13,7 +13,7 @@ export class DiscordMessage implements Message {
 
   reply(text: string): void {
     if (!this.message.author.bot) {
-      this.message.reply(this.text());
+      this.message.reply(text);
     }
   }
 }
