@@ -1,5 +1,5 @@
 let priceFormatter = new Intl.NumberFormat('ko-KR', { style: "decimal" });
-let formatter = new Intl.NumberFormat("en-GB", { style: "percent",  signDisplay: 'always' , maximumFractionDigits: 2});
+let formatter = new Intl.NumberFormat("en-GB", { style: "percent", maximumFractionDigits: 2});
 
 export const templates: any = {
   "YahooFinance": (data: object): object => {
