@@ -3,9 +3,9 @@ import * as Providers from './provider';
 import * as Eta from 'eta';
 
 Eta.configure({
-    views: "",
-    cache: true // Make Eta cache templates
-})
+  views: '',
+  cache: true, // Make Eta cache templates
+});
 
 const processor = new Processor();
 

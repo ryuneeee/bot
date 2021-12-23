@@ -14,7 +14,7 @@ export class YahooFinanceHandler implements MessageHandler {
     axios
       .get(`${FINANCE_HOST}/price/${code}`)
       .then(function (response: AxiosResponse) {
-        msg.reply("YahooFinance", response.data)
+        msg.reply('YahooFinance', response.data);
       })
       .catch(function (error) {
         console.error(error);

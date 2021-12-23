@@ -1,6 +1,5 @@
-
 export const templates: any = {
-    "YahooFinance": (data: object): any => {
-      return "";
-    }
-  } 
+  YahooFinance: (data: object): any => {
+    return '';
+  },
+};
