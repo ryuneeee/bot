@@ -1,4 +1,6 @@
 import { Message } from './Message';
+import { templates } from '../templates/DiscordTemplate';
+
 
 export class DiscordMessage implements Message {
   message: any;
@@ -11,9 +13,9 @@ export class DiscordMessage implements Message {
     return this.message.content;
   }
 
-  reply(text: string): void {
+  reply(templateType: string, data: any): void {
     if (!this.message.author.bot) {
-      this.message.reply(text);
+      this.message.reply(templates[templateType](data))
     }
   }
 }

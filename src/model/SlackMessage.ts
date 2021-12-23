@@ -12,9 +12,9 @@ export class SlackMessage implements Message {
     return this.message.text;
   }
 
-  reply(text: string): void {
+  reply(templateType: string, data: object): void {
     this.say({
-      text: text,
+      text: data,
     });
   }
 }

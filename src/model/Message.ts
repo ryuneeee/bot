@@ -1,4 +1,4 @@
 export interface Message {
   text(): string;
-  reply(text: string): void;
+  reply(templateType: string, data: Object): void;
 }

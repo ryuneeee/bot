@@ -14,7 +14,7 @@ export class Slack {
     this.processor = processor;
 
     app.message(/.*/g, async ({ message, say }: { message: any; say: any }) => {
-      processor.handleMessage(new SlackMessage(message, say));
+      this.processor.handleMessage(new SlackMessage(message, say));
     });
   }
 

@@ -8,23 +8,13 @@ export class YahooFinanceHandler implements MessageHandler {
   handle(msg: Message) {
     let delimeter = msg.text().substring(0, 1);
     let code = msg.text().substring(1);
-    let tickers = code.split(',');
 
     if (delimeter !== '$') return;
 
     axios
       .get(`${FINANCE_HOST}/price/${code}`)
       .then(function (response: AxiosResponse) {
-        let reply: string = '';
-
-        tickers
-          .map((t) => t.trim())
-          .map((t) => {
-            let price = response.data[t].regularMarketPrice;
-            reply += `> ${t}: $${price}\n`;
-          });
-
-        msg.reply(reply);
+        msg.reply("YahooFinance", response.data)
       })
       .catch(function (error) {
         console.error(error);
